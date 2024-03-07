@@ -1,0 +1,24 @@
+<html>       
+       <script>
+
+                    function polulateDiv(){
+                        const a = document.getElementById("firstnum").value;
+                        const b = document.getElementById("secNUm").value;
+                        const element = document.getElementById("finalsum");
+                        element.innerHTML= parseInt(a)+parseInt(b);
+                    }
+     </script>
+  
+  
+  <body>
+            <input oninput="polulateDiv()" id="firstnum" type="text" placeholder="First Number"></body><br/><br/>
+            <input oninput="polulateDiv()" id="secNUm" type="text" placeholder="Second  Number"></input><br/><br/>
+          <!-- <button oninput="polulateDiv()"> Calculate Sum</button><br/><br/> -->
+            <div id="finalsum"></div>
+
+
+
+    </body>
+
+
+</html>
