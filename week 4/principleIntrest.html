@@ -18,6 +18,16 @@
                     //     // element.innerHTML= parseInt(a)+parseInt(b);
                     // }
 
+                        let timeout;
+                        function debousepolulateDiv(){
+
+                          clearTimeout(timeout);
+                          timeout = setTimeout(function(){
+                            polulateDiv()
+                          },1000);
+                        }
+
+
                     async function polulateDiv(){
                       const a = document.getElementById("principal").value;
                       const b = document.getElementById("rate").value;
