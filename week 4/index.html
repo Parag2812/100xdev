@@ -4,8 +4,11 @@
                     function polulateDiv(){
                         const a = document.getElementById("firstnum").value;
                         const b = document.getElementById("secNUm").value;
-                        const element = document.getElementById("finalsum");
-                        element.innerHTML= parseInt(a)+parseInt(b);
+
+                        fetch("https://sum-server.100xdevs.com/sum?a="+a+ "&b=" +b)
+
+                        // const element = document.getElementById("finalsum");
+                        // element.innerHTML= parseInt(a)+parseInt(b);
                     }
      </script>
   
