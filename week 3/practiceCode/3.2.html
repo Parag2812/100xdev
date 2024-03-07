@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+            <button onclick="getAnimalData()">  ANIMAL DATA 
+            </button>
+
+
+            <button onclick="getAnimalData1()">  ANIMAL DATA 1
+            </button>
+
+            <script>
+
+                    function  getAnimalData1(){
+                        fetch("https://fakerapi.it/api/v1/persons")
+                        .then(function (response) {
+                            response.json()
+                            .then(function (finalData) {
+                                console.log(finalData);        
+                            })
+                        })
+                    }
+
+
+
+
+                    async function  getAnimalData(){
+                       const response = await fetch("https://fakerapi.it/api/v1/persons");
+                        const finalData = await response.json();
+                        console.log(finalData);
+                    }
+
+            </script>
+    </body>
+</html>
