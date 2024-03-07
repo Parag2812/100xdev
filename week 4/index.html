@@ -6,7 +6,13 @@
                         const b = document.getElementById("secNUm").value;
 
                         fetch("https://sum-server.100xdevs.com/sum?a="+a+ "&b=" +b)
+                          .then(function(response){
+                              response.text()
+                              .then(function(ans){
+                                document.getElementById("finalsum").innerHTML = ans;
+                              })
 
+                          });
                         // const element = document.getElementById("finalsum");
                         // element.innerHTML= parseInt(a)+parseInt(b);
                     }

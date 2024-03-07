@@ -1,0 +1,52 @@
+
+<html>       
+       <script>
+
+                    // function polulateDiv(){
+                    //     const a = document.getElementById("firstnum").value;
+                    //     const b = document.getElementById("secNUm").value;
+
+                    //     fetch("https://sum-server.100xdevs.com/sum?a="+a+ "&b=" +b)
+                    //       .then(function(response){
+                    //           response.text()
+                    //           .then(function(ans){
+                    //             document.getElementById("finalsum").innerHTML = ans;
+                    //           })
+
+                    //       });
+                    //     // const element = document.getElementById("finalsum");
+                    //     // element.innerHTML= parseInt(a)+parseInt(b);
+                    // }
+
+                    async function polulateDiv(){
+                      const a = document.getElementById("principal").value;
+                      const b = document.getElementById("rate").value;
+                      const c = document.getElementById("time").value;
+
+                      const response = await  fetch("https://sum-server.100xdevs.com/interest?principal="+a+"&rate="+b+"&time="+c)
+                      const ans = await response.json();
+                      const total = ans.total;
+                      const interest = ans.interest;
+                      document.getElementById("finalsum").innerHTML =`Total: ${total}, Interest: ${interest}`;
+
+
+                    }
+     </script>
+  
+  
+  <body style="padding: 200px;">
+    <center>
+            <h3 style="color: rgb(255, 0, 0);"> Calculate Principal Interest</h3> <br>
+            <input oninput="polulateDiv()" id="principal" type="text" placeholder="Principal"></body><br/><br/>
+            <input oninput="polulateDiv()" id="rate" type="text" placeholder="Rate"></input><br/><br/>
+            <input oninput="polulateDiv()" id="time" type="text" placeholder="Duration"></input><br/><br/>
+            <!-- <button onch="polulateDiv()"> Calculate Sum</button><br/><br/> -->
+            <div id="finalsum"></div>
+     </center>
+
+
+    </body>
+
+
+</html>
+
