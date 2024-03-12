@@ -2,14 +2,12 @@ import { } from "react"
 import PropTypes from 'prop-types';
 
 export function Todos({todos}) {
-
-    
     return(
         <div>
            {todos.map(function(todo){
             return (<div key={todo.id}>
-                <h1>{todo.title}</h1>
-                <h2>{todo.description}</h2>
+                <h2>{todo.title}</h2>
+                <h3>{todo.description}</h3>
                 <button>{todo.completed == true ? "Completed" : "Mark as Complete"}</button>
             </div>)
            })} 
@@ -17,16 +15,6 @@ export function Todos({todos}) {
 
     )
 
-
-    // return (<div>
-    //     {todos.map(=>((todo) {
-    //         return <div>
-    //             <h1>{todo.title}</h1>
-    //             <h2>{todo.description}</h2>
-    //             <button>{todo.completed == true ? "Completed" : "Mark as Complete"}</button>
-    //         </div>
-    //     )})}
-    // </div>
 }
 Todos.propTypes = {
     todos: PropTypes.arrayOf(
